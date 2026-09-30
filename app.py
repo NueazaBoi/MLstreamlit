@@ -151,15 +151,27 @@ st.subheader("📖 Quick Species Guide")
 
 c1, c2, c3 = st.columns(3)
 with c1:
-    with st.container(border=True):
+    try:
+        box1 = st.container(border=True)
+    except TypeError:
+        box1 = st.container()
+    with box1:
         st.markdown("### 🌸 Setosa")
         st.write("Notable for having short, wide petals. Easily separated from the other two species.")
 with c2:
-    with st.container(border=True):
+    try:
+        box2 = st.container(border=True)
+    except TypeError:
+        box2 = st.container()
+    with box2:
         st.markdown("### 🌺 Versicolor")
         st.write("Features intermediate petal sizes. Can sometimes share dimensions with Virginica.")
 with c3:
-    with st.container(border=True):
+    try:
+        box3 = st.container(border=True)
+    except TypeError:
+        box3 = st.container()
+    with box3:
         st.markdown("### 🌻 Virginica")
         st.write("Has the longest and widest petals on average among all three species.")
 
